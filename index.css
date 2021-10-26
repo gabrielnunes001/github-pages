@@ -6,8 +6,12 @@ body {
 }
 
 .bar-top{
-  min-height: 1.2em;
-  background-color: bisque;
+  min-height: 6em;
+  min-width: 100%;
+  top: 0px;
+  position: fixed;
+  background-color: #272727;
+  z-index: 99;
 }
 
 body {
