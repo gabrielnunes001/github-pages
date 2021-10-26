@@ -5,6 +5,11 @@ body {
   height: 100%;
 }
 
+.bar-top{
+  min-height: 1.2em;
+  background-color: bisque;
+}
+
 body {
   margin: 0;
   display: flex;
