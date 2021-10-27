@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Prosto+One');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
 html{
   scroll-behavior: smooth;
@@ -31,6 +32,7 @@ main{
   padding: 3em;
   z-index: 99;
   background-color: #5c5c5c;
+  font-family: 'PT Sans Narrow';
 }
 
 .bloco{
@@ -49,14 +51,14 @@ main{
 
 .titulo{
   display: block;
-  font-family: 'Prosto One', cursive;
+  font-family: 'PT Sans Narrow', cursive;
   font-size: 3rem;
   font-weight: bold;
 }
 
 .sub{
   display: block;
-  font-family: 'Prosto One', cursive;
+  font-family: 'PT Sans Narrow', cursive;
   font-size: 1rem;
   font-weight: bold;
 }
