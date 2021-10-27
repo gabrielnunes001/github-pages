@@ -17,7 +17,7 @@ var currentScrollPos = window.pageYOffset;
 //   } else {
 //     document.getElementById("navbar").style.top = "-50px";
 //   }
-    if (window.pageYOffset <= 299) {
+    if (window.pageYOffset <= 300) {
         bgimg[0].style.background = "rgba(51, 51, 51, " + (currentScrollPos/80)/3.725 + ")";
         bgimg[0].style.height = 22 - (currentScrollPos/16) + "em";
         container[0].style.margin = 2-(currentScrollPos/155) + "em";
@@ -30,7 +30,7 @@ var currentScrollPos = window.pageYOffset;
         // container[0].style.width = "100%";
         container[0].children[0].style.borderRadius = 0;
         bgimg[0].style.background = "rgba(51, 51, 51, 1)";
-        bgimg[0].style.height = "3em";
+        bgimg[0].style.height = "3.2em";
     }
   prevScrollpos = currentScrollPos;
 }
