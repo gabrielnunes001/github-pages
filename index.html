@@ -1,2 +1,2292 @@
-<h1>Testes com Github Pages</h1>
-<p></p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RM Clinic | Clínica de Estética</title>
+
+    <meta
+        name="description"
+        content="RM Clinic - Clínica de estética. Beleza, cuidado e bem-estar em um só lugar."
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           VARIÁVEIS
+        ========================================================= */
+
+        :root {
+            --branco: #ffffff;
+            --branco-quente: #fffafa;
+
+            --rosa: #d99aab;
+            --rosa-claro: #f4dce2;
+            --rosa-muito-claro: #fcf3f5;
+
+            --dourado: #c49a6c;
+            --dourado-claro: #dfc09a;
+
+            --texto: #4d4144;
+            --texto-claro: #806f74;
+
+            --escuro: #342b2e;
+
+            --sombra:
+                0 1rem 3rem rgba(91, 52, 63, 0.10);
+
+            --raio: 1.2rem;
+
+            --largura:
+                76rem;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--texto);
+            background: var(--branco);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =========================================================
+           ELEMENTOS GERAIS
+        ========================================================= */
+
+        .container {
+            width: min(
+                calc(100% - 3rem),
+                var(--largura)
+            );
+
+            margin-inline: auto;
+        }
+
+        .section {
+            padding: 7rem 0;
+        }
+
+        .section-header {
+            max-width: 42rem;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-label {
+            display: block;
+
+            margin-bottom: 0.7rem;
+
+            color: var(--dourado);
+
+            font-size: 0.8rem;
+            font-weight: 700;
+
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            color: var(--escuro);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                2rem,
+                4vw,
+                3.2rem
+            );
+
+            line-height: 1.15;
+        }
+
+        .section-description {
+            margin-top: 1rem;
+
+            color: var(--texto-claro);
+
+            font-size: 1rem;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.94
+            );
+
+            backdrop-filter: blur(1rem);
+
+            border-bottom:
+                1px solid rgba(
+                    196,
+                    154,
+                    108,
+                    0.18
+                );
+        }
+
+        .nav {
+            min-height: 5.5rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 2rem;
+        }
+
+        .logo {
+            color: var(--escuro);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 1.7rem;
+            font-weight: 700;
+
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--dourado);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+
+            gap: 2rem;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: var(--texto);
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition:
+                color 0.25s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -0.4rem;
+
+            width: 0;
+            height: 0.1rem;
+
+            background: var(--dourado);
+
+            transition:
+                width 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--dourado);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-button {
+            display: none;
+
+            width: 2.8rem;
+            height: 2.8rem;
+
+            border: 0;
+            border-radius: 50%;
+
+            background: var(--rosa-muito-claro);
+
+            color: var(--escuro);
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            padding: 2rem 0 6rem;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--rosa-muito-claro),
+                    var(--branco)
+                );
+        }
+
+        .hero-image {
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 21 / 9;
+
+            overflow: hidden;
+
+            border-radius: 1.5rem;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2dce1,
+                    #ead0b3
+                );
+
+            box-shadow: var(--sombra);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        /*
+           Placeholder enquanto não colocar a imagem.
+        */
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: rgba(77, 65, 68, 0.55);
+
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-content {
+            max-width: 50rem;
+
+            margin: 4rem auto 0;
+
+            text-align: center;
+        }
+
+        .hero-title {
+            color: var(--escuro);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(
+                2.5rem,
+                6vw,
+                4.5rem
+            );
+
+            line-height: 1.05;
+        }
+
+        .hero-title span {
+            color: var(--dourado);
+        }
+
+        .hero-text {
+            max-width: 40rem;
+
+            margin: 1.5rem auto 2rem;
+
+            color: var(--texto-claro);
+
+            font-size: 1.05rem;
+        }
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 3.3rem;
+
+            padding:
+                0.8rem 1.6rem;
+
+            border: 0;
+            border-radius: 10rem;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--rosa),
+                    var(--dourado)
+                );
+
+            color: white;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0.7rem 1.5rem
+                rgba(196, 154, 108, 0.22);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-0.15rem);
+
+            box-shadow:
+                0 1rem 2rem
+                rgba(196, 154, 108, 0.3);
+        }
+
+
+        /* =========================================================
+           SOBRE
+        ========================================================= */
+
+        .about {
+            background: var(--branco);
+        }
+
+        .about-content {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 4rem;
+
+            align-items: center;
+        }
+
+        .about-image {
+            aspect-ratio: 4 / 5;
+
+            overflow: hidden;
+
+            border-radius: 1.5rem;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2dce1,
+                    #e7ceb0
+                );
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            color: var(--escuro);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 2rem;
+
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text p {
+            color: var(--texto-claro);
+
+            margin-bottom: 1rem;
+        }
+
+
+        /* =========================================================
+           EQUIPE
+        ========================================================= */
+
+        .team {
+            margin-top: 7rem;
+        }
+
+        .team-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 2rem;
+        }
+
+        .team-card {
+            padding: 2rem;
+
+            text-align: center;
+
+            background: var(--branco);
+
+            border:
+                1px solid
+                rgba(196, 154, 108, 0.18);
+
+            border-radius: var(--raio);
+
+            box-shadow:
+                0 0.8rem 2rem
+                rgba(91, 52, 63, 0.05);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-0.4rem);
+
+            box-shadow: var(--sombra);
+        }
+
+        .team-photo {
+            width: 9rem;
+            height: 9rem;
+
+            margin: 0 auto 1.5rem;
+
+            overflow: hidden;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2dce1,
+                    #ead3b7
+                );
+
+            border:
+                0.3rem solid
+                var(--rosa-claro);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .team-name {
+            color: var(--escuro);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 1.4rem;
+        }
+
+        .team-role {
+            margin-top: 0.3rem;
+
+            color: var(--texto-claro);
+
+            font-size: 0.9rem;
+        }
+
+        .instagram {
+            display: inline-flex;
+
+            margin-top: 1rem;
+
+            color: var(--dourado);
+
+            font-size: 0.9rem;
+            font-weight: 700;
+
+            transition:
+                color 0.2s ease;
+        }
+
+        .instagram:hover {
+            color: var(--rosa);
+        }
+
+
+        /* =========================================================
+           CONTATO
+        ========================================================= */
+
+        .contact {
+            background: var(--rosa-muito-claro);
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 1.3rem;
+        }
+
+        .contact-card {
+            padding: 2rem 1.5rem;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: var(--raio);
+
+            border:
+                1px solid
+                rgba(196, 154, 108, 0.15);
+        }
+
+        .contact-icon {
+            width: 3.3rem;
+            height: 3.3rem;
+
+            margin: 0 auto 1rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--rosa-claro);
+
+            color: var(--dourado);
+
+            font-size: 1.3rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.4rem;
+
+            color: var(--escuro);
+
+            font-size: 1rem;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: var(--texto-claro);
+
+            font-size: 0.9rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--dourado);
+        }
+
+        .form-button {
+            margin-top: 3rem;
+
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           SERVIÇOS
+        ========================================================= */
+
+        .services {
+            background: white;
+        }
+
+        .services-carousel {
+            position: relative;
+        }
+
+        .services-track {
+            display: flex;
+
+            overflow-x: auto;
+
+            scroll-snap-type: x mandatory;
+
+            scrollbar-width: none;
+
+            gap: 1.5rem;
+
+            padding:
+                0.5rem
+                0.3rem
+                2rem;
+        }
+
+        .services-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .service-card {
+            position: relative;
+
+            flex:
+                0 0
+                calc(33.333% - 1rem);
+
+            aspect-ratio: 4 / 5;
+
+            overflow: hidden;
+
+            scroll-snap-align: start;
+
+            border-radius: 1.3rem;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2dce1,
+                    #ead3b7
+                );
+
+            box-shadow: var(--sombra);
+        }
+
+        .service-card img {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .service-placeholder {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: rgba(77, 65, 68, 0.45);
+
+            font-size: 0.85rem;
+        }
+
+        .service-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 1.5rem;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0.58),
+                    transparent 38%,
+                    rgba(0, 0, 0, 0.75)
+                );
+
+            color: white;
+        }
+
+        .service-title {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 1.5rem;
+
+            line-height: 1.15;
+        }
+
+        .service-description {
+            max-width: 90%;
+
+            font-size: 0.9rem;
+
+            line-height: 1.5;
+        }
+
+        .carousel-button {
+            position: absolute;
+
+            top: 50%;
+
+            z-index: 5;
+
+            width: 3rem;
+            height: 3rem;
+
+            transform: translateY(-50%);
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.92);
+
+            color: var(--escuro);
+
+            box-shadow: var(--sombra);
+
+            cursor: pointer;
+
+            font-size: 1.5rem;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .carousel-button:hover {
+            background: white;
+
+            transform:
+                translateY(-50%)
+                scale(1.05);
+        }
+
+        .carousel-prev {
+            left: -1rem;
+        }
+
+        .carousel-next {
+            right: -1rem;
+        }
+
+
+        /* =========================================================
+           LOCALIZAÇÃO
+        ========================================================= */
+
+        .location {
+            background: var(--rosa-muito-claro);
+        }
+
+        .location-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 2rem;
+
+            margin-bottom: 4rem;
+        }
+
+        .address-card {
+            display: flex;
+
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 3rem;
+
+            background: white;
+
+            border-radius: var(--raio);
+
+            box-shadow:
+                0 0.8rem 2rem
+                rgba(91, 52, 63, 0.05);
+        }
+
+        .address-card h3 {
+            margin-bottom: 1rem;
+
+            color: var(--escuro);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 2rem;
+        }
+
+        .address-card p {
+            color: var(--texto-claro);
+        }
+
+        .map {
+            min-height: 25rem;
+
+            overflow: hidden;
+
+            border-radius: var(--raio);
+
+            box-shadow: var(--sombra);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+
+            min-height: 25rem;
+
+            border: 0;
+        }
+
+        .clinic-gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 1.5rem;
+        }
+
+        .clinic-photo {
+            aspect-ratio: 4 / 3;
+
+            overflow: hidden;
+
+            border-radius: var(--raio);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2dce1,
+                    #ead3b7
+                );
+        }
+
+        .clinic-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .clinic-photo:hover img {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 3rem 0;
+
+            background: var(--escuro);
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 0.7rem;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 1.7rem;
+        }
+
+        .footer-logo span {
+            color: var(--dourado-claro);
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.65);
+
+            font-size: 0.85rem;
+        }
+
+
+        /* =========================================================
+           ANIMAÇÃO
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(2rem);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 60rem) {
+
+            .about-content {
+                grid-template-columns: 1fr;
+
+                gap: 3rem;
+            }
+
+            .about-image {
+                max-width: 35rem;
+
+                margin-inline: auto;
+            }
+
+            .contact-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .service-card {
+                flex-basis:
+                    calc(50% - 0.75rem);
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 45rem) {
+
+            html {
+                scroll-padding-top: 5rem;
+            }
+
+            .container {
+                width:
+                    min(
+                        calc(100% - 2rem),
+                        var(--largura)
+                    );
+            }
+
+            .section {
+                padding: 5rem 0;
+            }
+
+            .nav {
+                min-height: 5rem;
+            }
+
+            .menu-button {
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                position: absolute;
+
+                top: 5rem;
+                left: 0;
+                right: 0;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 1rem;
+
+                background: white;
+
+                border-bottom:
+                    1px solid
+                    rgba(
+                        196,
+                        154,
+                        108,
+                        0.2
+                    );
+
+                box-shadow:
+                    0 1rem 2rem
+                    rgba(0,0,0,0.06);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+
+                padding: 0.8rem;
+            }
+
+            .hero {
+                padding-top: 1rem;
+            }
+
+            .hero-image {
+                aspect-ratio: 16 / 9;
+
+                border-radius: 1rem;
+            }
+
+            .hero-content {
+                margin-top: 3rem;
+            }
+
+            .hero-text {
+                font-size: 0.95rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card {
+                max-width: 25rem;
+
+                margin-inline: auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                flex-basis: 85%;
+            }
+
+            .carousel-button {
+                width: 2.6rem;
+                height: 2.6rem;
+            }
+
+            .carousel-prev {
+                left: 0.4rem;
+            }
+
+            .carousel-next {
+                right: 0.4rem;
+            }
+
+            .address-card {
+                padding: 2rem;
+            }
+
+            .clinic-gallery {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =========================================================
+           ACESSIBILIDADE
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         MENU
+    ========================================================= -->
+
+    <header class="header">
+
+        <nav class="nav container">
+
+            <a
+                href="#inicio"
+                class="logo"
+                aria-label="RM Clinic - início"
+            >
+                RM <span>Clinic</span>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contato">
+                        Contato
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#servicos">
+                        Serviços
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#localizacao">
+                        Localização
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <main id="inicio">
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-image">
+
+                    <!--
+                        TROQUE O SRC PELA IMAGEM DO BANNER.
+
+                        Recomendado:
+                        21:9
+                    -->
+
+                    <!-- <div class="image-placeholder">
+                        IMAGEM DO BANNER — 21:9
+                    </div> -->
+
+                    
+                    <img
+                        src="/banner.jpg"
+                        alt="RM Clinic"
+                    >
+                   
+
+                </div>
+
+
+                <div class="hero-content">
+
+                    <span class="section-label">
+                        RM Clinic
+                    </span>
+
+                    <h1 class="hero-title">
+                        Beleza, cuidado e
+                        <span>bem-estar.</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        Na RM Clinic, cada detalhe foi pensado
+                        para proporcionar uma experiência
+                        acolhedora, sofisticada e personalizada.
+                        Cuidamos da sua beleza respeitando
+                        sua essência e valorizando o que há
+                        de melhor em você.
+                    </p>
+
+                    <!--
+                        TROQUE O NÚMERO DO WHATSAPP
+                    -->
+
+                    <a
+                        class="button"
+                        href="https://wa.me/5599999999999"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Falar pelo WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SOBRE
+        ====================================================== -->
+
+        <section
+            class="section about"
+            id="sobre"
+        >
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <span class="section-label">
+                        Conheça a clínica
+                    </span>
+
+                    <h2 class="section-title">
+                        Sobre a RM Clinic
+                    </h2>
+
+                    <p class="section-description">
+                        Um espaço criado para cuidar de você
+                        com carinho, profissionalismo e
+                        excelência.
+                    </p>
+
+                </div>
+
+
+                <div class="about-content reveal">
+
+                    <div class="about-image">
+
+                        <!-- FOTO DA CLÍNICA -->
+
+                        <!-- <div class="image-placeholder">
+                            FOTO DA CLÍNICA
+                        </div> -->
+
+                        
+                        <img
+                            src="/clinica.jpg"
+                            alt="Interior da RM Clinic"
+                        >
+                       
+
+                    </div>
+
+
+                    <div class="about-text">
+
+                        <h3>
+                            Cuidar de você é a nossa essência.
+                        </h3>
+
+                        <p>
+                            A RM Clinic nasceu com o propósito
+                            de oferecer tratamentos estéticos
+                            com qualidade, segurança e
+                            atendimento humanizado.
+                        </p>
+
+                        <p>
+                            Nossa equipe trabalha para entender
+                            cada pessoa de forma individual,
+                            oferecendo procedimentos e cuidados
+                            pensados para suas necessidades,
+                            objetivos e bem-estar.
+                        </p>
+
+                        <p>
+                            Mais do que estética, acreditamos
+                            em proporcionar confiança,
+                            autoestima e momentos de cuidado
+                            com você mesma.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     EQUIPE
+                ================================================== -->
+
+                <div class="team">
+
+                    <div class="section-header reveal">
+
+                        <span class="section-label">
+                            Nossa equipe
+                        </span>
+
+                        <h2 class="section-title">
+                            Profissionais que cuidam de você
+                        </h2>
+
+                    </div>
+
+
+                    <div class="team-grid">
+
+
+                        <!-- PROFISSIONAL 1 -->
+
+                        <article class="team-card reveal">
+
+                            <div class="team-photo">
+
+                                <!-- <div class="image-placeholder">
+                                    FOTO
+                                </div> -->
+
+                                
+                                <img
+                                    src="/profissional-1.jpg"
+                                    alt="Nome da profissional"
+                                >
+                               
+
+                            </div>
+
+                            <h3 class="team-name">
+                                Robeane
+                            </h3>
+
+                            <p class="team-role">
+                                Formação / Especialização
+                            </p>
+
+                            <a
+                                class="instagram"
+                                href="https://instagram.com/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                @instagram
+                            </a>
+
+                        </article>
+
+
+                        <!-- PROFISSIONAL 2 -->
+
+                        <article class="team-card reveal">
+
+                            <div class="team-photo">
+
+                                <!-- <div class="image-placeholder">
+                                    FOTO
+                                </div> -->
+
+                                
+                                <img
+                                    src="/profissional-2.jpg"
+                                    alt="Nome da profissional"
+                                >
+                               
+
+                            </div>
+
+                            <h3 class="team-name">
+                                Mara
+                            </h3>
+
+                            <p class="team-role">
+                                Formação / Especialização
+                            </p>
+
+                            <a
+                                class="instagram"
+                                href="https://instagram.com/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                @instagram
+                            </a>
+
+                        </article>
+
+
+                        <!-- PROFISSIONAL 3 -->
+
+                        <article class="team-card reveal">
+
+                            <div class="team-photo">
+
+                                <!-- <div class="image-placeholder">
+                                    FOTO
+                                </div> -->
+
+                                
+                                <img
+                                    src="/profissional-3.jpg"
+                                    alt="Nome da profissional"
+                                >
+                               
+
+                            </div>
+
+                            <h3 class="team-name">
+                                Taila
+                            </h3>
+
+                            <p class="team-role">
+                                Formação / Especialização
+                            </p>
+
+                            <a
+                                class="instagram"
+                                href="https://instagram.com/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                @instagram
+                            </a>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTATO
+        ====================================================== -->
+
+        <section
+            class="section contact"
+            id="contato"
+        >
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <span class="section-label">
+                        Entre em contato
+                    </span>
+
+                    <h2 class="section-title">
+                        Estamos aqui para você
+                    </h2>
+
+                    <p class="section-description">
+                        Tire suas dúvidas, agende seu atendimento
+                        ou fale com nossa equipe.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <h3>
+                            WhatsApp
+                        </h3>
+
+                        <a
+                            href="https://wa.me/5599999999999"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            (99) 99999-9999
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <h3>
+                            Telefone
+                        </h3>
+
+                        <a href="tel:+559999999999">
+                            (99) 9999-9999
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            ✉
+                        </div>
+
+                        <h3>
+                            E-mail
+                        </h3>
+
+                        <a href="mailto:contato@rmclinic.com.br">
+                            contato@rmclinic.com.br
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-card reveal">
+
+                        <div class="contact-icon">
+                            ✎
+                        </div>
+
+                        <h3>
+                            Formulário
+                        </h3>
+
+                        <a
+                            href="https://seu-formulario.com"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Preencher formulário
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-button reveal">
+
+                    <a
+                        class="button"
+                        href="https://wa.me/5599999999999"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Agendar atendimento
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SERVIÇOS
+        ====================================================== -->
+
+        <section
+            class="section services"
+            id="servicos"
+        >
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <span class="section-label">
+                        Nossos cuidados
+                    </span>
+
+                    <h2 class="section-title">
+                        Serviços
+                    </h2>
+
+                    <p class="section-description">
+                        Conheça alguns dos tratamentos
+                        oferecidos pela RM Clinic.
+                    </p>
+
+                </div>
+
+
+                <div class="services-carousel reveal">
+
+
+                    <button
+                        class="carousel-button carousel-prev"
+                        id="servicesPrev"
+                        aria-label="Serviço anterior"
+                    >
+                        ‹
+                    </button>
+
+
+                    <div
+                        class="services-track"
+                        id="servicesTrack"
+                    >
+
+
+                        <!-- SERVIÇO 1 -->
+
+                        <article class="service-card">
+
+                            <!--
+                                TROQUE PELO LINK DA IMAGEM
+                            -->
+
+                            <!-- <div class="service-placeholder">
+                                IMAGEM DO SERVIÇO
+                            </div> -->
+
+                            
+                            <img
+                                src="/servico-1.jpg"
+                                alt="Descrição do serviço"
+                            >
+                           
+
+                            <div class="service-overlay">
+
+                                <h3 class="service-title">
+                                    Nome do Serviço
+                                </h3>
+
+                                <p class="service-description">
+                                    Pequena descrição do tratamento,
+                                    seus benefícios e informações
+                                    importantes.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- SERVIÇO 2 -->
+
+                        <article class="service-card">
+
+                            <!-- <div class="service-placeholder">
+                                IMAGEM DO SERVIÇO
+                            </div> -->
+                            <img
+                                src="/servico-2.jpg"
+                                alt="Descrição do serviço"
+                            >
+
+                            <div class="service-overlay">
+
+                                <h3 class="service-title">
+                                    Procedimento Estético
+                                </h3>
+
+                                <p class="service-description">
+                                    Descrição breve do procedimento
+                                    realizado pela clínica.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- SERVIÇO 3 -->
+
+                        <article class="service-card">
+
+                            <div class="service-placeholder">
+                                IMAGEM DO SERVIÇO
+                            </div>
+
+                            <div class="service-overlay">
+
+                                <h3 class="service-title">
+                                    Tratamento Facial
+                                </h3>
+
+                                <p class="service-description">
+                                    Informações sobre o tratamento
+                                    e seus principais benefícios.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- SERVIÇO 4 -->
+
+                        <article class="service-card">
+
+                            <div class="service-placeholder">
+                                IMAGEM DO SERVIÇO
+                            </div>
+
+                            <div class="service-overlay">
+
+                                <h3 class="service-title">
+                                    Tratamento Corporal
+                                </h3>
+
+                                <p class="service-description">
+                                    Descrição do tratamento corporal
+                                    oferecido pela RM Clinic.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- SERVIÇO 5 -->
+
+                        <article class="service-card">
+
+                            <div class="service-placeholder">
+                                IMAGEM DO SERVIÇO
+                            </div>
+
+                            <div class="service-overlay">
+
+                                <h3 class="service-title">
+                                    Beleza & Bem-estar
+                                </h3>
+
+                                <p class="service-description">
+                                    Cuidados personalizados para
+                                    valorizar sua beleza.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <button
+                        class="carousel-button carousel-next"
+                        id="servicesNext"
+                        aria-label="Próximo serviço"
+                    >
+                        ›
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LOCALIZAÇÃO
+        ====================================================== -->
+
+        <section
+            class="section location"
+            id="localizacao"
+        >
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <span class="section-label">
+                        Onde estamos
+                    </span>
+
+                    <h2 class="section-title">
+                        Localização
+                    </h2>
+
+                    <p class="section-description">
+                        Será um prazer receber você em nossa clínica.
+                    </p>
+
+                </div>
+
+
+                <div class="location-grid reveal">
+
+
+                    <div class="address-card">
+
+                        <h3>
+                            Visite a RM Clinic
+                        </h3>
+
+                        <p>
+                            Rua Nome da Rua, nº 000
+                            <br>
+                            Bairro
+                            <br>
+                            Cidade - UF
+                            <br>
+                            CEP 00000-000
+                        </p>
+
+                        <br>
+
+                        <a
+                            class="button"
+                            href="https://www.google.com/maps"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Como chegar
+                        </a>
+
+                    </div>
+
+
+                    <div class="map">
+
+                        <!--
+                            SUBSTITUA ESTE IFRAME PELO CÓDIGO
+                            GERADO PELO GOOGLE MAPS.
+
+                            Google Maps >
+                            Compartilhar >
+                            Incorporar um mapa
+                        -->
+
+                        <iframe
+                            src="https://www.google.com/maps?q=São%20Paulo%2C%20SP&output=embed"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização da RM Clinic"
+                        ></iframe>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FOTOS DA CLÍNICA
+                ================================================== -->
+
+                <div class="section-header reveal">
+
+                    <span class="section-label">
+                        Nosso espaço
+                    </span>
+
+                    <h2 class="section-title">
+                        Conheça a clínica
+                    </h2>
+
+                </div>
+
+
+                <div class="clinic-gallery">
+
+
+                    <div class="clinic-photo reveal">
+
+                        <div class="image-placeholder">
+                            FOTO DA CLÍNICA
+                        </div>
+
+                    </div>
+
+
+                    <div class="clinic-photo reveal">
+
+                        <div class="image-placeholder">
+                            FOTO DA CLÍNICA
+                        </div>
+
+                    </div>
+
+
+                    <div class="clinic-photo reveal">
+
+                        <div class="image-placeholder">
+                            FOTO DA CLÍNICA
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-logo">
+                RM <span>Clinic</span>
+            </div>
+
+            <p>
+                Beleza, cuidado e bem-estar.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                © <span id="currentYear"></span>
+                RM Clinic. Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        /* ========================================================
+           MENU MOBILE
+        ======================================================== */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuButton.addEventListener(
+            "click",
+            () => {
+
+                const aberto =
+                    navLinks.classList.toggle("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    aberto
+                );
+
+                menuButton.textContent =
+                    aberto ? "×" : "☰";
+
+            }
+        );
+
+
+        /*
+            Fecha o menu depois que o usuário
+            toca em algum item.
+        */
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove(
+                            "active"
+                        );
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        menuButton.textContent = "☰";
+
+                    }
+                );
+
+            });
+
+
+
+        /* ========================================================
+           CARROSSEL DE SERVIÇOS
+        ======================================================== */
+
+        const track =
+            document.getElementById("servicesTrack");
+
+        const prev =
+            document.getElementById("servicesPrev");
+
+        const next =
+            document.getElementById("servicesNext");
+
+
+        function scrollServices(direction) {
+
+            const card =
+                track.querySelector(".service-card");
+
+            if (!card) return;
+
+            const gap =
+                parseFloat(
+                    getComputedStyle(track).gap
+                ) || 0;
+
+            const amount =
+                card.offsetWidth + gap;
+
+            track.scrollBy({
+                left:
+                    amount * direction,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        prev.addEventListener(
+            "click",
+            () => scrollServices(-1)
+        );
+
+        next.addEventListener(
+            "click",
+            () => scrollServices(1)
+        );
+
+
+
+        /* ========================================================
+           SUPORTE AO SWIPE NO CELULAR
+        ======================================================== */
+
+        let startX = 0;
+
+        track.addEventListener(
+            "touchstart",
+            event => {
+
+                startX =
+                    event.touches[0].clientX;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        track.addEventListener(
+            "touchend",
+            event => {
+
+                const endX =
+                    event.changedTouches[0].clientX;
+
+                const difference =
+                    startX - endX;
+
+                if (
+                    Math.abs(difference) < 40
+                ) {
+                    return;
+                }
+
+                if (difference > 0) {
+                    scrollServices(1);
+                } else {
+                    scrollServices(-1);
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+
+        /* ========================================================
+           ANIMAÇÃO DE ENTRADA
+        ======================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target
+                                .classList
+                                .add("visible");
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            element =>
+                observer.observe(element)
+        );
+
+
+
+        /* ========================================================
+           ANO AUTOMÁTICO
+        ======================================================== */
+
+        document.getElementById(
+            "currentYear"
+        ).textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+
+</html>
